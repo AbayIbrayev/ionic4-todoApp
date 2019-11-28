@@ -14,8 +14,16 @@
   </ion-item>
 
   <ion-list class="ion-padding">
-    <ion-item *ngFor="let todo of taskList">
+    <ion-item *ngFor="let todo of taskList; let i = index" @fadein>
       {{ todo }}
+      <ion-buttons slot="end">
+        <ion-button (click)="updateTask(i)" color="primary">
+          <ion-icon name="create" slot="start"></ion-icon>
+        </ion-button>
+        <ion-button (click)="deleteTask(i)" color="primary">
+          <ion-icon name="trash" slot="start"></ion-icon>
+        </ion-button>
+      </ion-buttons>
     </ion-item>
   </ion-list>
 </ion-content>
