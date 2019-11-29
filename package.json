@@ -1,8 +1,8 @@
 {
-  "name": "ionic4-todoApp",
+  "name": "ToDoster",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "Abay Ibrayev",
+  "homepage": "https://github.com/AbayIbrayev/ionic4-todoApp",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

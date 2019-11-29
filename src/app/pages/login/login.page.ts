@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EmailValidator } from "../../validators/email";
-import { NavController, AlertController, LoadingController } from '@ionic/angular';
+import { NavController, AlertController, LoadingController, MenuController } from '@ionic/angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore } from 'angularfire2/firestore';
+
 
 
 @Component({
@@ -14,15 +15,14 @@ import { AngularFirestore } from 'angularfire2/firestore';
 export class LoginPage implements OnInit {
   public loginForm: FormGroup;
 
-  constructor(public navCtrl: NavController, public formBuilder: FormBuilder, public alertCtrl: AlertController, public loadingCtrl: LoadingController, public afAuth: AngularFireAuth, public firestore: AngularFirestore) {
+  constructor(private menuCtrl: MenuController, public navCtrl: NavController, public formBuilder: FormBuilder, public alertCtrl: AlertController, public loadingCtrl: LoadingController, public afAuth: AngularFireAuth, public firestore: AngularFirestore) {
     this.loginForm = formBuilder.group({
       email: ['', Validators.compose([Validators.required, EmailValidator.isValid])],
       password: ['', Validators.compose([Validators.minLength(6), Validators.required])]
     });
    }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 
   async loginUser() {
