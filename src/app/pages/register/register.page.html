@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center ion-padding">
+  <form [formGroup]="signupForm" (submit)="signupUser()" novalidate>
+    <ion-list lines="full" class="register-list">
+      <ion-item>
+        <ion-label position="floating" color="medium">First Name</ion-label>
+        <ion-input class="ion-text-capitalize" formControlName="firstName" type="text"
+          [class.invalid]="!signupForm.controls.firstName.valid && signupForm.controls.firstName.dirty"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none" class="error-message"
+        *ngIf="!signupForm.controls.firstName.valid  && signupForm.controls.firstName.dirty">
+        <p>Please enter a valid name.</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating" color="medium">Last Name</ion-label>
+        <ion-input class="ion-text-capitalize" formControlName="lastName" type="text"
+          [class.invalid]="!signupForm.controls.lastName.valid && signupForm.controls.lastName.dirty"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none" class="error-message"
+        *ngIf="!signupForm.controls.lastName.valid  && signupForm.controls.lastName.dirty">
+        <p>Please enter a valid name.</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating" color="medium">Email</ion-label>
+        <ion-input formControlName="email" type="email" [class.invalid]="!signupForm.controls.email.valid && signupForm.controls.email.dirty"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none" class="error-message" *ngIf="!signupForm.controls.email.valid  && signupForm.controls.email.dirty">
+        <p>Please enter a valid email.</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating" color="medium">Password</ion-label>
+        <ion-input formControlName="password" type="password"
+          [class.invalid]="!signupForm.controls.password.valid && signupForm.controls.password.dirty"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none" class="error-message"
+        *ngIf="!signupForm.controls.password.valid  && signupForm.controls.password.dirty">
+        <p>Please enter a valid password.</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating" color="medium">Confirm Password</ion-label>
+        <ion-input formControlName="retype" type="password"
+          [class.invalid]="!signupForm.controls.retype.valid && signupForm.controls.retype.dirty"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none" class="error-message" *ngIf="!signupForm.controls.retype.valid  && signupForm.controls.retype.dirty">
+        <p>Please enter a valid password.</p>
+      </ion-item>
+      
+    </ion-list>
+
+    <ion-button type="submit" [disabled]="!signupForm.valid" class="signUp-btn">Create an Account</ion-button>
+  </form>
+</ion-content>

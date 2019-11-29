@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center ion-padding">
+  <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
+    <ion-list lines="full" class="login-list">
+      <ion-item>
+        <ion-label position="floating" color="medium">Email</ion-label>
+        <ion-input formControlName="email" type="email"
+          [class.invalid]="!loginForm.controls.email.valid && loginForm.controls.email.dirty"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none" class="error-message" *ngIf="!loginForm.controls.email.valid  && loginForm.controls.email.dirty">
+        <p>Please enter a valid email.</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating" color="medium">Password</ion-label>
+        <ion-input formControlName="password" type="password"
+          [class.invalid]="!loginForm.controls.password.valid && loginForm.controls.password.dirty"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none" class="error-message" *ngIf="!loginForm.controls.password.valid  && loginForm.controls.password.dirty">
+        <p>Please enter a valid password.</p>
+      </ion-item>
+    </ion-list>
+
+    <ion-button type="submit" [disabled]="!loginForm.valid" class="signIn-btn">Sign In</ion-button>
+  </form>
+
+  <ion-button class="login-btn" expand="block" fill="outline" color="tertiary" routerLink="/forgot">Forgot Password?</ion-button>
+  <ion-button class="login-btn" expand="block" routerLink="/register">Create an Account</ion-button>
+</ion-content>

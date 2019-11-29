@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Reset Password</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center ion-padding">
+  <form [formGroup]="resetPwdForm" (submit)="resetUserPwd()" novalidate>
+    <ion-list lines="full" class="login-list">
+      <ion-item>
+        <ion-label position="floating" color="medium">Email</ion-label>
+        <ion-input formControlName="email" type="email"
+          [class.invalid]="!resetPwdForm.controls.email.valid && resetPwdForm.controls.email.dirty"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none" class="error-message"
+        *ngIf="!resetPwdForm.controls.email.valid  && resetPwdForm.controls.email.dirty">
+        <p>Please enter a valid email.</p>
+      </ion-item>
+    </ion-list>
+    <ion-button type="submit" [disabled]="!resetPwdForm.valid" class="signIn-btn">Send a Reset Link</ion-button>
+  </form>
+</ion-content>
