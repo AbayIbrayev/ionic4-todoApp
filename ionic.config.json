@@ -1,5 +1,7 @@
 {
   "name": "ToDoster",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

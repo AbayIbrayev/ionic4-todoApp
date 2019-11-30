@@ -12,4 +12,8 @@ export class AboutPage implements OnInit {
   ngOnInit() {
   }
 
+  openWebsite() {
+    window.open("https://github.com/AbayIbrayev/ionic4-todoApp", '_blank');
+  }
+
 }
