@@ -12,7 +12,8 @@
       </ion-item>
 
       <ion-item lines="none" class="error-message" *ngIf="!loginForm.controls.email.valid  && loginForm.controls.email.dirty">
-        <p>Please enter a valid email.</p>
+        <ion-icon color="danger" slot="start" name="alert"></ion-icon>
+        <p class="error">Please enter a valid email.</p>
       </ion-item>
 
       <ion-item>
@@ -22,7 +23,8 @@
       </ion-item>
 
       <ion-item lines="none" class="error-message" *ngIf="!loginForm.controls.password.valid  && loginForm.controls.password.dirty">
-        <p>Please enter a valid password.</p>
+        <ion-icon color="danger" slot="start" name="alert"></ion-icon>
+        <p class="error">Please enter a valid password.</p>
       </ion-item>
     </ion-list>
 

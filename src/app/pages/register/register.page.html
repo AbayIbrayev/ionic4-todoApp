@@ -21,7 +21,8 @@
 
       <ion-item lines="none" class="error-message"
         *ngIf="!signupForm.controls.firstName.valid  && signupForm.controls.firstName.dirty">
-        <p>Please enter a valid name.</p>
+        <ion-icon color="danger" slot="start" name="alert"></ion-icon>
+        <p class="error">Please enter a valid name.</p>
       </ion-item>
 
       <ion-item>
@@ -32,7 +33,8 @@
 
       <ion-item lines="none" class="error-message"
         *ngIf="!signupForm.controls.lastName.valid  && signupForm.controls.lastName.dirty">
-        <p>Please enter a valid name.</p>
+        <ion-icon color="danger" slot="start" name="alert"></ion-icon>
+        <p class="error">Please enter a valid name.</p>
       </ion-item>
 
       <ion-item>
@@ -41,7 +43,8 @@
       </ion-item>
 
       <ion-item lines="none" class="error-message" *ngIf="!signupForm.controls.email.valid  && signupForm.controls.email.dirty">
-        <p>Please enter a valid email.</p>
+        <ion-icon color="danger" slot="start" name="alert"></ion-icon>
+        <p class="error">Please enter a valid email.</p>
       </ion-item>
 
       <ion-item>
@@ -52,7 +55,8 @@
 
       <ion-item lines="none" class="error-message"
         *ngIf="!signupForm.controls.password.valid  && signupForm.controls.password.dirty">
-        <p>Please enter a valid password.</p>
+        <ion-icon color="danger" slot="start" name="alert"></ion-icon>
+        <p class="error">Please enter a valid password.</p>
       </ion-item>
 
       <ion-item>
@@ -62,7 +66,8 @@
       </ion-item>
 
       <ion-item lines="none" class="error-message" *ngIf="!signupForm.controls.retype.valid  && signupForm.controls.retype.dirty">
-        <p>Please enter a valid password.</p>
+        <ion-icon color="danger" slot="start" name="alert"></ion-icon>
+        <p class="error">Please enter a valid password.</p>
       </ion-item>
       
     </ion-list>

@@ -18,7 +18,8 @@
 
       <ion-item lines="none" class="error-message"
         *ngIf="!resetPwdForm.controls.email.valid  && resetPwdForm.controls.email.dirty">
-        <p>Please enter a valid email.</p>
+        <ion-icon color="danger" slot="start" name="alert"></ion-icon>
+        <p class="error">Please enter a valid email.</p>
       </ion-item>
     </ion-list>
     <ion-button type="submit" [disabled]="!resetPwdForm.valid" class="signIn-btn">Send a Reset Link</ion-button>
